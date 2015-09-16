@@ -2,11 +2,10 @@ class WorkoutsController < ApplicationController
 	before_action :find_workout, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@workout = Workout.all
+		@workouts = Workout.all.order("created_at DESC")
 	end
 
 	def show
-		
 	end
 
 	def new
